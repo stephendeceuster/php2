@@ -17,6 +17,7 @@ require_once "strings.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/City.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/User.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/services/Messageservice.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/services/DBManager.php";
 
 session_start();
 
@@ -24,6 +25,7 @@ session_start();
 require_once "access_control.php";
 
 $ms = new MessageService();
+$dbm = new DBManager();
 
 /*
 //initialize $errors array
