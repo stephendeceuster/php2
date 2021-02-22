@@ -7,8 +7,10 @@ class MessageService {
     private $infos;
 
     public function __construct() {
-        $this->errors = $_SESSION['errors'];
-        $_SESSION['errors'] = [];
+        if ( key_exists( 'errors', $_SESSION ) AND is_array( $_SESSION['errors']) ) {
+            $this->errors = $_SESSION['errors'];
+            $_SESSION['errors'] = [];
+        }
 
         $this->infos = $_SESSION['msgs'];
         $_SESSION['msgs'] = [];
@@ -61,7 +63,9 @@ class MessageService {
     }
 
     public function ShowInfos() {
-        print "<div class='msgs'>$this->infos</div>";
+        if (isset($this->infos[0])) {
+            print "<div class='msgs'>" . $this->infos[0] . "</div>";
+        }
     }
 
 }

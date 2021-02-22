@@ -6,5 +6,5 @@ $public_access = false;
 require_once "lib/autoload.php";
 
 $log = $logger->ShowLog();
-$log = str_replace('\r\n', '<br>', $log);
+//$log = str_replace('\r\n', '<br>', $log);
 print $log;

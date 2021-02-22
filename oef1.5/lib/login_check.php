@@ -9,9 +9,10 @@ $user = LoginCheck();
 
 if ( $user )
 {
-    $user = new User();
+    //$user = new User();
 
     $_SESSION['user'] = $user;
+
     //$_SESSION['msgs'][] = "Welkom, " . $_SESSION['user']['usr_voornaam'];
     $_SESSION['msgs'][] = "Welkom, " . $_SESSION['user']->getVoornaam();
     GoHome();
@@ -24,6 +25,7 @@ else
 
 function LoginCheck()
 {
+    global $dbm;
     if ( $_SERVER['REQUEST_METHOD'] == "POST" )
     {
         //controle CSRF token

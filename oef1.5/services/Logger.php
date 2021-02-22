@@ -4,10 +4,11 @@
 class Logger
 {
     private $fp;
-    private $logfile = "log/log.txt";
+    private $logfile;
 
     public function __construct() {
-        $this->fp = fopen($this->logfile, a+);
+        $this->logfile = $_SERVER['DOCUMENT_ROOT'] . "/php2/oef1.5/log/log.txt";
+        $this->fp = fopen($this->logfile, 'a+');
     }
 
     public function Log($msg) {
@@ -16,6 +17,7 @@ class Logger
 
     public function ShowLog() {
         $log = file_get_contents($this->logfile);
+        $log = str_replace("\r\n", "<br>", $log);
         return $log;
     }
 }
