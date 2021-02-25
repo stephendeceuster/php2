@@ -20,15 +20,15 @@ class MessageService {
     }
 
     public function CountErrors() {
-        return count($this->errors);
+        return is_array($this->errors) ? count($this->errors) : 0;
     }
 
     public function CountInputErrors() {
-        return count($this->input_errors);
+        return is_array($this->input_errors) ? count($this->input_errors) : 0;
     }
 
     public function CountInfos() {
-        return count($this->infos);
+        return is_array($this->infos) ? count($this->infos) : 0;
     }
 
     public function CountNewErrors() {
