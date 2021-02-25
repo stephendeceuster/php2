@@ -32,3 +32,104 @@
 2021-02-22 09:29:29am -> select * from imagesblabla 
 2021-02-22 09:31:36am -> select * from images
 2021-02-22 09:31:45am -> select * from images where img_id=2
+2021-02-22 11:11:20am -> select * from images
+2021-02-22 11:11:27am -> select * from user where usr_id=22
+2021-02-22 11:11:35am -> select * from images
+2021-02-25 08:43:53am -> SELECT * FROM user WHERE usr_email='stephen@sidebury.com' 
+2021-02-25 08:43:53am -> select * from images
+2021-02-25 08:43:59am -> select * from images where img_id=2
+2021-02-25 08:45:02am -> select * from images where img_id=2
+2021-02-25 08:45:02am -> select lan_id, lan_land from land
+2021-02-25 08:48:56am -> select * from images where img_id=2
+2021-02-25 08:48:56am -> select lan_id, lan_land from land
+2021-02-25 08:48:59am -> select * from images where img_id=2
+2021-02-25 08:48:59am -> select lan_id, lan_land from land
+2021-02-25 09:03:09am -> select * from images where img_id=2
+2021-02-25 09:03:09am -> select lan_id, lan_land from land
+2021-02-25 09:03:18am -> select * from images
+2021-02-25 09:03:24am -> select * from user where usr_id=22
+2021-02-25 09:05:33am -> select * from user where usr_id=22
+2021-02-25 09:05:36am -> select * from user where usr_id=22
+2021-02-25 09:05:50am -> select * from user where usr_id=22
+2021-02-25 09:22:23am -> select * from eu_btw_codes
+2021-02-25 10:35:28am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:35:39am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:36:46am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:36:49am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:36:54am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:36:55am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:38:29am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:38:33am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:38:37am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:40:59am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:41:43am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:41:45am -> SHOW FULL COLUMNS FROM eu_btw_codes
+2021-02-25 10:43:19am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:43:21am -> SHOW FULL COLUMNS FROM eu_btw_codes
+2021-02-25 10:44:25am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:44:27am -> SHOW FULL COLUMNS FROM eu_btw_codes
+2021-02-25 10:45:03am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:45:05am -> SHOW FULL COLUMNS FROM eu_btw_codes
+2021-02-25 10:45:26am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:45:28am -> SHOW FULL COLUMNS FROM eu_btw_codes
+2021-02-25 10:52:13am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:52:14am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:52:24am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:52:26am -> SHOW FULL COLUMNS FROM eu_btw_codes
+2021-02-25 10:54:03am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:54:04am -> SHOW FULL COLUMNS FROM eu_btw_codes
+2021-02-25 10:54:04am -> UPDATE eu_btw_codes SET  eub_land = 'België'  ,  eub_code = 'BE'  WHERE eub_id = 1 
+2021-02-25 10:54:04am -> select * from eu_btw_codes
+2021-02-25 10:54:09am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:54:12am -> SHOW FULL COLUMNS FROM eu_btw_codes
+2021-02-25 10:54:12am -> UPDATE eu_btw_codes SET  eub_land = 'België'  ,  eub_code = 'BE12'  WHERE eub_id = 1 
+2021-02-25 10:54:12am -> select * from eu_btw_codes
+2021-02-25 10:54:35am -> select * from eu_btw_codes where eub_id=1
+2021-02-25 10:54:39am -> SHOW FULL COLUMNS FROM eu_btw_codes
+2021-02-25 10:54:39am -> UPDATE eu_btw_codes SET  eub_land = 'België'  ,  eub_code = 'BE'  WHERE eub_id = 1 
+2021-02-25 10:54:39am -> select * from eu_btw_codes
+2021-02-25 10:56:04am -> select * from eu_btw_codes
+2021-02-25 10:56:14am -> select * from images
+2021-02-25 10:58:49am -> SELECT * FROM user WHERE usr_email='stephen@sidebury.com' 
+2021-02-25 10:58:50am -> select * from images
+2021-02-25 10:58:58am -> select * from images where img_id=2
+2021-02-25 10:58:58am -> select lan_id, lan_land from land
+2021-02-25 10:59:07am -> SHOW FULL COLUMNS FROM images
+2021-02-25 10:59:07am -> select * from images where img_id=2
+2021-02-25 10:59:07am -> select lan_id, lan_land from land
+2021-02-25 10:59:22am -> select * from images where img_id=2
+2021-02-25 10:59:22am -> select lan_id, lan_land from land
+2021-02-25 10:59:24am -> select * from images
+2021-02-25 11:00:09am -> select * from images where img_id=2
+2021-02-25 11:00:09am -> select lan_id, lan_land from land
+2021-02-25 11:00:21am -> SHOW FULL COLUMNS FROM images
+2021-02-25 11:00:21am -> UPDATE images SET  img_title = 'De Eiffeltoren 789'  ,  img_filename = 'paris.jpg'  ,  img_width = '888.0012'  ,  img_height = '77788'  ,  img_lan_id = '6'  ,  img_date = '2020-09-14'  WHERE img_id = 2 
+2021-02-25 11:00:21am -> select * from images
+2021-02-25 11:00:25am -> select * from images where img_id=2
+2021-02-25 11:00:25am -> select lan_id, lan_land from land
+2021-02-25 11:00:30am -> SHOW FULL COLUMNS FROM images
+2021-02-25 11:00:30am -> UPDATE images SET  img_title = 'De Eiffeltoren 789'  ,  img_filename = 'paris.jpg'  ,  img_width = '123'  ,  img_height = '77788'  ,  img_lan_id = '6'  ,  img_date = '2020-09-14'  WHERE img_id = 2 
+2021-02-25 11:00:31am -> select * from images
+2021-02-25 11:00:35am -> select * from images where img_id=2
+2021-02-25 11:00:35am -> select lan_id, lan_land from land
+2021-02-25 11:00:44am -> SHOW FULL COLUMNS FROM images
+2021-02-25 11:00:44am -> UPDATE images SET  img_title = 'De Eiffeltoren 789'  ,  img_filename = 'paris.jpg'  ,  img_width = '123'  ,  img_height = '77788'  ,  img_lan_id = '7'  ,  img_date = '2020-09-14'  WHERE img_id = 2 
+2021-02-25 11:00:44am -> select * from images
+2021-02-25 11:00:49am -> select * from images where img_id=2
+2021-02-25 11:00:49am -> select lan_id, lan_land from land
+2021-02-25 11:00:54am -> SHOW FULL COLUMNS FROM images
+2021-02-25 11:00:54am -> UPDATE images SET  img_title = 'De Eiffeltoren 789'  ,  img_filename = 'paris.jpg'  ,  img_width = '123'  ,  img_height = '77788'  ,  img_lan_id = '1'  ,  img_date = '2020-09-14'  WHERE img_id = 2 
+2021-02-25 11:00:54am -> select * from images
+2021-02-25 11:00:57am -> select * from images where img_id=2
+2021-02-25 11:00:57am -> select lan_id, lan_land from land
+2021-02-25 11:02:10am -> select * from images where img_id=2
+2021-02-25 11:02:10am -> select lan_id, lan_land from land
+2021-02-25 11:02:16am -> SHOW FULL COLUMNS FROM images
+2021-02-25 11:02:16am -> select * from images where img_id=2
+2021-02-25 11:02:16am -> select lan_id, lan_land from land
+2021-02-25 11:02:43am -> SHOW FULL COLUMNS FROM images
+2021-02-25 11:02:43am -> UPDATE images SET  img_title = 'De Eiffeltoren 789'  ,  img_filename = 'paris.jpg'  ,  img_width = '123'  ,  img_height = '77788'  ,  img_lan_id = '1'  ,  img_date = '2020-09-14'  WHERE img_id = 2 
+2021-02-25 11:02:43am -> select * from images
+2021-02-25 11:02:53am -> select * from images
+2021-02-25 11:02:58am -> select * from user where usr_id=22
+2021-02-25 11:03:14am -> select * from images

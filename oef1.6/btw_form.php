@@ -23,10 +23,12 @@ PrintNavbar();
             //add extra elements
             $extra_elements['csrf_token'] = GenerateCSRF( "profiel.php"  );
 
+            var_dump($ms->GetInputErrors());
+
             //merge
             $output = MergeViewWithData( $output, $data );
             $output = MergeViewWithExtraElements( $output, $extra_elements );
-            $output = MergeViewWithErrors( $output, $errors );
+            $output = MergeViewWithErrors( $output, $ms->GetInputErrors() );
             $output = RemoveEmptyErrorTags( $output, $data );
 
             print $output;

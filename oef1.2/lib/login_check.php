@@ -3,23 +3,27 @@ error_reporting( E_ALL );
 ini_set( 'display_errors', 1 );
 
 $public_access = true;
-require_once "../models/user.php";
+require_once "../models/User.php";
 require_once "autoload.php";
 
-$user = LoginCheck();
+$user1 = LoginCheck();
 
-var_dump($user);
 
-if ( $user )  {
+if ( $user1 )  {
 
     //data to object
-    $_SESSION['user'] = new user();
-    $_SESSION['user']->setId($user['usr_id']);
-    //$_SESSION['user']->setVoornaam($user['usr_voornaam']);
-    //$_SESSION['user']->setNaam($user['usr_naam']);
-    //$_SESSION['user']->setEmail($user['usr_email']);
-    //$_SESSION['user']->setTelefoon($user['usr_telefoon']);
+    $user = new user();
+    $user->setId($user1['usr_id']);
+    $user->setVoornaam($user1['usr_voornaam']);
+    $user->setNaam($user1['usr_naam']);
+    $user->setEmail($user1['usr_email']);
+    $user->setTelefoon($user1['usr_telefoon']);
+
+    $_SESSION['user'] = $user;
+
     echo '<br>';
+
+    $_SESSION['user'];
     var_dump($_SESSION['user']);
     //die;
 

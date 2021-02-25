@@ -12,8 +12,10 @@ class MessageService {
             $_SESSION['errors'] = [];
         }
 
-        $this->infos = $_SESSION['msgs'];
-        $_SESSION['msgs'] = [];
+        if ( key_exists( 'msgs', $_SESSION ) AND is_array( $_SESSION['msgs']) ) {
+            $this->infos = $_SESSION['msgs'];
+            $_SESSION['msgs'] = [];
+        }
 
         $this->input_errors = $_SESSION['input_errors'];
         $_SESSION['input_errors'] = [];
@@ -32,6 +34,8 @@ class MessageService {
     }
 
     public function CountNewErrors() {
+        var_dump($_SESSION);
+        // return is_array($_SESSION['errors']) ? count($_SESSION['errors']) : 0;
         return count($_SESSION['errors']);
     }
 
@@ -47,14 +51,15 @@ class MessageService {
         if ($this->CountInputErrors()) {
             return $this->input_errors;
         }
-        return null;
+        //return null;
+        return [];
     }
 
     public function AddMessage($type, $msg, $key = null) {
         if ($type === 'input_error') {
-            array_push($_SESSION['errors'][$key . "_error"], $msg);
+            $_SESSION['errors'][$key . "_error"] = $msg;
         } else {
-            array_push($_SESSION($type), $msg);
+            $_SESSION[$type] = $msg;
         }
     }
 

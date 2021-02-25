@@ -19,6 +19,7 @@ require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/User.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/services/Messageservice.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/services/Logger.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/services/DBManager.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/services/Container.php";
 
 session_start();
 
@@ -28,6 +29,7 @@ require_once "access_control.php";
 $ms = new MessageService();
 $logger = new Logger();
 $dbm = new DBManager($logger);
+$container = new Container($dbm, $logger, $ms);
 
 /*
 //initialize $errors array

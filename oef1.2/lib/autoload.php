@@ -5,8 +5,8 @@
 $request_uri = explode("/", $_SERVER['REQUEST_URI']);
 $app_root = "/" . $request_uri[1] . "/" . $request_uri[2];
 
-require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/city.php";
-require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/user.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/City.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/User.php";
 
 session_start();
 
@@ -22,7 +22,6 @@ require_once "strings.php";
 
 require_once "access_control.php";
 
-//require_once  $_SERVER['SERVER_NAME'] ."/php2/oef1.1/models/city.php";
 
 //initialize $errors array
 $errors = [];

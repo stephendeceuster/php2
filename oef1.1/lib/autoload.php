@@ -17,7 +17,7 @@ require_once "strings.php";
 
 require_once "access_control.php";
 
-//require_once  $_SERVER['SERVER_NAME'] ."/php2/oef1.1/models/city.php";
+//require_once  $_SERVER['SERVER_NAME'] ."/php2/oef1.1/models/City.php";
 
 //initialize $errors array
 $errors = [];

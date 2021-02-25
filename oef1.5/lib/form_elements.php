@@ -6,6 +6,7 @@ function MakeSelect( $fkey, $value, $sql )
     $select = "<select id=$fkey name=$fkey value=$value>";
     $select .= "<option value='0'></option>";
 
+    global $dbm;
     $data = $dbm->GetData($sql);
 
     foreach ( $data as $row )

@@ -38,6 +38,8 @@ function MergeViewWithData( $template, $data )
     $returnvalue = "";
 
     foreach ( $data as $row )
+
+
     {
         $output = $template;
 
@@ -70,7 +72,7 @@ function MergeViewWithErrors( $template, $errors )
 {
     foreach ( $errors as $key => $error )
     {
-        $template = str_replace( "@$key@", "<p style='color:red'>$error</p>", $template );
+        $template = str_replace( "@$key@", "<p style='color:#ff0000'>$error</p>", $template );
     }
     return $template;
 }

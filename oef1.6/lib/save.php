@@ -12,6 +12,7 @@ function SaveFormData()
 
     global $app_root;
     global $ms;
+    global $dbm;
 
     if ( $_SERVER['REQUEST_METHOD'] == "POST" )
     {

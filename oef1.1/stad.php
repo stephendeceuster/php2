@@ -14,27 +14,45 @@ PrintNavbar();
     <div class="row">
 
         <?php
-
+        if ( ! isset( $_GET['img_id']) ) die("Geen img_id opgegeven");
         if ( ! is_numeric( $_GET['img_id']) ) die("Ongeldig argument " . $_GET['img_id'] . " opgegeven");
 
         $rows = GetData( "select * from images where img_id=" . $_GET['img_id'] );
 
-        var_dump($rows);
-        //get template
-        $template = file_get_contents("templates/column_full.html");
+        var_dump($rows[0]);
+        if ($rows) {
+            $row = $rows[0];
 
-        //merge
-        foreach ( $rows as $row )
-        {
-            $output = $template;
+            //data to object
+            $city = new city();
+            $city->setId($row['img_id']);
+            $city->setFilename($row['img_filename']);
+            $city->setTitle($row['img_title']);
+            $city->setWidth($row['img_width']);
+            $city->setHeight($row['img_height']);
+            $city->setPublished($row['img_published']);
+            $city->setLanId($row['img_lan_id']);
+            $city->setDate($row['img_date']);
 
-            foreach( array_keys($row) as $field )
-            {
-                $output = str_replace( "@$field@", $row["$field"], $output );
+            //get template
+            $template = file_get_contents("templates/column_full.html");
+
+            //merge
+            $html = $template;
+
+            //object to array
+            $properties = $city->toArray2();
+            $properties['title'] = $city->getTitle();
+
+            foreach ($properties as $key => $value) {
+                $html = str_replace("@img_$key@", $value, $html);
             }
-            print $output;
-        }
 
+            //output
+            print $html;
+
+
+        }
         ?>
 
     </div>

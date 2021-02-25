@@ -17,10 +17,17 @@ PrintNavbar();
 
         <?php
 
+            var_dump($_SESSION['user']);
+
 
             //get data
-            //$data = GetData( "select * from user where usr_id=" . $_SESSION['user']['usr_id'] );
-            $data = $_SESSION['user']->toArray2();
+            //$data1 = GetData( "select * from user where usr_id=" . $_SESSION['user']['usr_id'] );
+            //$data1 = GetData( "select * from user where usr_id=" . $_SESSION['user']->getId() );
+            //echo '<br>VARDUMP DATA1<br>';
+
+            $data[0] = $_SESSION['user']->toArray2();
+            echo '<br>VARDUMP DATA<br>';
+            var_dump($data);
 
             //get template
             $output = file_get_contents("templates/profiel.html");

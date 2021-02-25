@@ -16,10 +16,11 @@ PrintNavbar();
 
 <?php
     //toon messages als er zijn
-    foreach ( $msgs as $msg )
-    {
-        print '<div class="msgs">' . $msg . '</div>';
-    }
+    //foreach ( $msgs as $msg )
+    //{
+    //    print '<div class="msgs">' . $msg . '</div>';
+    //}
+    $ms->ShowInfos();
 
     //get data
     $data = $dbm->GetData( "select * from eu_btw_codes" );
