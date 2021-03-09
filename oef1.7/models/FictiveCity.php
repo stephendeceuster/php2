@@ -8,5 +8,5 @@ class FictiveCity extends AbstractCity
     public function isReal() {
         return $this->real;
     }
-    
+
 }

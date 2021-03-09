@@ -55,3 +55,6 @@
 2021-03-04 13:09:23: select * from eu_btw_codes
 2021-03-04 13:09:50: select * from images
 2021-03-04 13:09:56: select * from images
+2021-03-09 10:21:37: SELECT * FROM user WHERE usr_email='stephen@sidebury.com' 
+2021-03-09 10:22:42: SELECT * FROM user WHERE usr_email='stephen@sidebury.com' 
+2021-03-09 10:22:42: select * from images

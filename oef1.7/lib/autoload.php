@@ -12,8 +12,10 @@ require_once "security.php";
 require_once "strings.php";
 
 //models
-require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/CityInterface.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/AbstractCity.php";
 require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/City.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/FictiveCity.php";
+
 require_once $_SERVER['DOCUMENT_ROOT'] . $app_root . "/models/User.php";
 
 //services
