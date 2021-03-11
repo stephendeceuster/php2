@@ -27,26 +27,27 @@ PrintNavbar();
     //get data
     $data = $container->getDBManager()->GetData( "select * from images" );
 
+    $restClient = new RESTclient( $authentication = null );
 
     // dit zou waarschijnlijk best in aparte file komen om elders ook te kunnen gebruiken.
-    function GetTheWeather($arr, $APIkey) {
+    function GetTheWeather($arr, $APIkey, $restClient) {
         foreach ( $arr as $key=>$row ) {
             $url = 'api.openweathermap.org/data/2.5/weather?q='. $row['img_weather_location'] .'&lang=nl&units=metric&appid=' . $APIkey;
 
-            $restClient = new RESTclient( $authentication = null );
             $restClient->CurlInit($url);
             $response = json_decode($restClient->CurlExec());
 
             $row['weather_description'] = $response->weather[0]->description;
             $row['weather_temp'] = round($response->main->temp);
             $row['weather_humidity'] = $response->main->humidity;
+            $row['weather_icon'] = '<img src="http://openweathermap.org/img/w/' .$response->weather[0]->icon . '.png" height="32" width="auto">';
 
             $arr[$key] = $row;
         }
         return $arr;
     }
 
-    $data = GetTheWeather($data, $openWeatherKey);
+    $data = GetTheWeather($data, $openWeatherKey, $restClient);
 
     $template = file_get_contents("templates/column.html");
 
