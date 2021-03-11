@@ -28,7 +28,7 @@ PrintNavbar();
     $data = $container->getDBManager()->GetData( "select * from images" );
 
 
-
+    // dit zou waarschijnlijk best in aparte file komen om elders ook te kunnen gebruiken.
     function GetTheWeather($arr) {
         foreach ( $arr as $key=>$row ) {
             $url = 'api.openweathermap.org/data/2.5/weather?q='. $row['img_weather_location'] .'&lang=nl&units=metric&appid=b52796bc30156e560a722c868e798a2e';
