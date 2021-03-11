@@ -29,9 +29,9 @@ PrintNavbar();
 
 
     // dit zou waarschijnlijk best in aparte file komen om elders ook te kunnen gebruiken.
-    function GetTheWeather($arr) {
+    function GetTheWeather($arr, $APIkey) {
         foreach ( $arr as $key=>$row ) {
-            $url = 'api.openweathermap.org/data/2.5/weather?q='. $row['img_weather_location'] .'&lang=nl&units=metric&appid=b52796bc30156e560a722c868e798a2e';
+            $url = 'api.openweathermap.org/data/2.5/weather?q='. $row['img_weather_location'] .'&lang=nl&units=metric&appid=' . $APIkey;
 
             $restClient = new RESTclient( $authentication = null );
             $restClient->CurlInit($url);
@@ -46,29 +46,9 @@ PrintNavbar();
         return $arr;
     }
 
-    $data = GetTheWeather($data);
+    $data = GetTheWeather($data, $openWeatherKey);
 
-    //var_dump($data);
-
-    //get template
     $template = file_get_contents("templates/column.html");
-
-    // API calls
-    /*
-    $url = 'api.openweathermap.org/data/2.5/weather?q=Herselt&lang=nl&units=metric&appid=b52796bc30156e560a722c868e798a2e';
-    $restClient = new RESTclient( $authentication = null );
-
-    $restClient->CurlInit($url);
-    $response = json_decode($restClient->CurlExec());
-
-    print('<br>--------------------------<br>');
-    var_dump($response->weather[0]->description);
-    print('<br>--------------------------<br>');
-    var_dump($response->main->temp);
-    print('<br>--------------------------<br>');
-    var_dump($response->main->humidity);
-    print('<br>--------------------------<br>');
-    */
 
     //merge
     $output .= MergeViewWithData( $template, $data );
