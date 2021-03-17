@@ -57,7 +57,7 @@ if ($id && $request_part == "btwcodes") {
 
 //GET btwcodes: alle btwcodes geven
 if ($method == "GET" and $request_part == "btwcodes") {
-    $sql = "select * from eu_btw_codes";
+    $sql = "select * from eu_btw_codes ORDER BY eub_code";
     $data = $container->getDBManager()->GetData( $sql , 'assoc' );
 
     print json_encode(["msg" => 'OK', "data" => $data]);

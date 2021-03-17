@@ -40,4 +40,27 @@ export const getCodes = () => (dispatch) => {
     });
 };
 
+export const deleteCodes = (id) => (dispatch) => {
+  axios
+    .delete(`./../api/btwcode/${id}`)
+    .then((responseObj) => {
+      console.log(responseObj);
+      dispatch(getCodes());
+    })
+    .catch((error) => console.log(error));
+};
+
+export const postCodes = (code, land) => (dispatch) => {
+  const params = new URLSearchParams();
+  params.append("code", code);
+  params.append("land", land);
+  axios
+    .post(`./../api/btwcodes/`, params)
+    .then((responseObj) => {
+      console.log(responseObj);
+      dispatch(getCodes());
+    })
+    .catch((error) => console.log(error));
+};
+
 export default reducer;

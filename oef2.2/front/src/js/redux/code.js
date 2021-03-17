@@ -54,8 +54,6 @@ export const putCode = (code, land, id) => (dispatch, getState) => {
     .catch((error) => console.log(error));
 };
 
-export const deleteCode = (id) => (dispatch, getState) => {
-  axios.delete(`./../api/btwcode/${getState().codeState.codeId}`).then(responseObj => console.log(responseObj));
-};
+
 
 export default reducer;
