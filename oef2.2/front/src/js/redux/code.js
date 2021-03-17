@@ -25,23 +25,37 @@ export const getCode = (id) => (dispatch, getState) => {
     type: "FETCH_CODE_START",
     payload: id,
   });
-  axios(`./../api/btwcode/${getState().codeState.codeId}`).then(
-    (responseObj) => {
+  axios(`./../api/btwcode/${getState().codeState.codeId}`)
+    .then((responseObj) => {
       console.log(responseObj.data.data[0]);
       dispatch({
         type: "FETCH_CODE_SUCCESS",
         payload: responseObj.data.data[0],
       });
-    }
-  ).catch(error => {
+    })
+    .catch((error) => {
+      console.log(error);
       dispatch({
-          type : "FETCH_CODE_FAIL",
+        type: "FETCH_CODE_FAIL",
       });
-  });
+    });
 };
 
-export const putCode = (code, land) => {
-    
-}
+export const putCode = (code, land, id) => (dispatch, getState) => {
+  axios
+    .put(`./../api/btwcode/${getState().codeState.codeId}`, {
+      code: code,
+      land: land,
+    })
+    .then((responseObj) => {
+      console.log(responseObj);
+      dispatch(getCode(id));
+    })
+    .catch((error) => console.log(error));
+};
+
+export const deleteCode = (id) => (dispatch, getState) => {
+  axios.delete(`./../api/btwcode/${getState().codeState.codeId}`).then(responseObj => console.log(responseObj));
+};
 
 export default reducer;

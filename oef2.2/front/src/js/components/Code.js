@@ -1,5 +1,5 @@
 import store from '../redux/store';
-import { getCode } from '../redux/code.js'
+import { getCode, putCode } from '../redux/code.js'
 
 class Code {
     constructor(holder, id, router) {
@@ -39,7 +39,7 @@ class Code {
     events = () => {
         this._formRef.addEventListener('submit', (e) => {
             e.preventDefault();
-            store.dispatch(putCode(this._formInputCode.value, this._formInputLand.value));
+            store.dispatch(putCode(this._formInputCode.value, this._formInputLand.value, this._codeId));
         });
     }
 

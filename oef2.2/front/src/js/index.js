@@ -19,17 +19,13 @@ import code from "./components/Code";
  const mainRef = document.querySelector(".main");
 
  router
-   .on("/*", () => {
-     //console.log('test');
-     code(mainRef, 2, router);
-   })
-  .on("/test", () => {
-    mainRef.innerHTML = '<h2>TEST</h2>';
-  })
-  .on("/codes", () => {
+  .on("/php2/oef2.2/front/codes", () => {
     codes(mainRef, router);
   })
-  .on("/code/:id/", ({data: {id}}) => {
+  .on("/php2/oef2.2/front/code/:id/*", ({data: {id}}) => {
     code(mainRef, id, router);
+  })
+  .on("/*", () => {
+    codes(mainRef, router);
   })  
   .resolve();
