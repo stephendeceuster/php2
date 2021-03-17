@@ -5,8 +5,8 @@ require_once './../lib/autoload.php';
 
 
 //Allow access from outside (see CORS)
-//header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Origin: 'https://gf.dev'");
+header("Access-Control-Allow-Origin: *");
+//header("Access-Control-Allow-Origin: 'https://gf.dev'");
 header("Access-Control-Allow-Credentials 'true'");
 
 
@@ -32,7 +32,7 @@ $request_uri = $_SERVER['REQUEST_URI'];
 
 $parts = explode("/", $request_uri);
 
-//zoek "api" in de uri
+// loop door $parts-array & zoek "api" in de uri -> ik heb files in map 'api' staan
 for ($i = 0; $i < count($parts); $i++) {
     if ($parts[$i] == "api") {
         break;
