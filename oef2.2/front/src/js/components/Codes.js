@@ -21,9 +21,10 @@ class Codes {
   }
   init = () => {
     this._holder.innerHTML = `
-        <div class="container">
-            <h2>BTW codes</h2>
+    
+        <div class="container">   
             <div class="table-container">
+            <h2>BTW codes</h2>
             <form class="col s12 code-form">
                 <div class="row" >
                     <div class="input-field col s2">
@@ -79,7 +80,20 @@ class Codes {
     if (codes) {
       this._tableRef.style.display = "block";
 
-      this._tbodyRef.innerHTML = codes
+    //   this._tbodyRef.innerHTML = codes
+    //     .map(
+    //       ({ eub_id, eub_land, eub_code }) =>
+    //         `<tr data-id="${eub_id}" data-land="${eub_land}" data-code="${eub_code}">
+    //         <td>${eub_code}</td>
+    //         <td>${eub_land}</td>
+    //         <td><a data-navigo href="./code/${eub_id}/${slugify(eub_land, {
+    //           lower: true,
+    //         })}">🖊</a></td>
+    //         <td class="lets-delete"><span>🗑</span></td>
+    //         </tr>`
+    //     )
+    //     .join("");
+    this._tbodyRef.insertAdjacentHTML('beforeend', codes
         .map(
           ({ eub_id, eub_land, eub_code }) =>
             `<tr data-id="${eub_id}" data-land="${eub_land}" data-code="${eub_code}">
@@ -91,7 +105,7 @@ class Codes {
             <td class="lets-delete"><span>🗑</span></td>
             </tr>`
         )
-        .join("");
+        .join(""));
       this._router.updatePageLinks();
     }
   };

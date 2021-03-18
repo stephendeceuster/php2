@@ -13,9 +13,11 @@ $public_access = true;
     <title>Frontend</title>
 </head>
 <body>
-<div class="header">
-    FRONTEND
-</div>
+<nav>
+    <div class="nav-wrapper">
+            <h2>API Calling...</h2>
+    </div>
+</nav>
 <div class="container main">
     Here should come the table
 </div>
