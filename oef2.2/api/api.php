@@ -42,6 +42,10 @@ for ($i = 0; $i < count($parts); $i++) {
 $request_part = $parts[$i + 1];
 if (count($parts) > $i + 1) {
     $id = $parts[$i + 2];
+    if ( !$container->getValidator()->isInt($id)) {
+        print json_encode(["msg" => 'Deze combinatie van Request en Method is niet toegelaten']);
+        exit;
+    }
 }
 
 if ($request_part != "btwcode" && $request_part != "btwcodes") {
